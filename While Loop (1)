@@ -1,0 +1,46 @@
+// Name: Meghana Vadassery
+//
+// Descrption: Write an algorithm and a program which prompts the user 
+// how many numbers they will input and have the user input the numbers, 
+// and then output the largest and smallest values. 
+//
+// Date: 04/11/2020
+//
+
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    int lowNum = 0;
+    int hiNum  = 0;
+
+  while (true){
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter how many numbers you want to compare: ");
+    int count = scanner.nextInt();
+    int counter = 0;
+    while (counter < count) {
+    System.out.print("Enter your number: ");
+      int input = scanner.nextInt();
+      if (counter == 0) {
+        lowNum = input;
+      }
+      if (input > hiNum){
+        hiNum = input;
+      }
+      if (input < lowNum) {
+        lowNum = input;
+      }
+        counter++;
+      }    
+        System.out.println ("The largest number is "+ hiNum + " and the smallest number is " + lowNum);
+         
+        System.out.print("Do you want to run the program again? Type 'Y' or 'N'");
+      char question = scanner.next().charAt(0);
+      if (question=='N') {
+        System.exit(0);
+      }
+    }
+  }
+  }
