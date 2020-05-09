@@ -1,0 +1,62 @@
+// Name: Meghana Vadassery
+//
+// Descrption:Write an algorithm and program that accepts 2 positive integers
+// from the user in any order,and prints all the multiples of 5 between the 2
+// numbers inclusive, in ascending and descending order.
+//
+// Date: 04/13/2020
+//
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    int hiNum;
+    int lowNum;
+    int lowBase;
+    int x;
+    int y;
+    boolean z = true;
+    while (z == true) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Input your first number: ");
+    x = scanner.nextInt();
+    System.out.print("Input your next number: ");
+    y = scanner.nextInt();
+    if (x<0 || y<0){
+       System.out.println("Error. Must input a positive number.");
+    }
+    else {
+       if (x>y){
+          hiNum = x;
+          lowNum = y;
+      }
+      else {
+         hiNum = y;
+         lowNum = x;
+    }
+      System.out.print("Multiples of 5 bewteen "+lowNum+" and "+hiNum+" in ascending order is: ");
+
+      int multiple;
+      if (lowNum%5 == 0) {
+      lowBase = lowNum;
+    } 
+      else {
+      lowBase = (lowNum+5) - lowNum%5;
+    }
+      for (multiple = lowBase; multiple <= hiNum; multiple+=5) {
+      System.out.print(multiple + ", ");
+      }
+      System.out.println("\n");
+      System.out.print("Multiples of 5 bewteen "+lowNum+" and "+hiNum+" in descending order is: ");
+      for (int i = multiple-5 ; i >= lowNum; i-=5) {
+        System.out.print(i + ", ");
+      }
+    }
+    System.out.print ("Do you want to run the program again? Y/N: ");
+    char question = scanner.next().charAt(0);
+    if (question != 'Y'){
+    z = false;
+      }
+    }
+  }
+}
